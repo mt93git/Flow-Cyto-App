@@ -1,0 +1,14 @@
+# R files
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj.user
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Output PDFs/reports
+Publication_*.pdf
+Activation_MFI_Dynamics.pdf
+Publication_Statistical_Report.txt
