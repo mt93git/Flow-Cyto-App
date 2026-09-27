@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software in academic research, please cite it as below."
+authors:
+  - family-names: "Tricaud"
+    given-names: "Maxence"
+    affiliation: "Yale University / Université Laval"
+    email: "mtricaud.cetri@gmail.com"
+  - name: "Libreros Lab"
+    affiliation: "Yale University School of Medicine"
+title: "Flow-Cyto App"
+version: "4.7.0"
+date-released: 2025-12-18
+url: "https://github.com/mt93git/Flow-Cyto-App"
+repository-code: "https://github.com/mt93git/Flow-Cyto-App"
+license: "MIT"
+abstract: "Interactive R/Shiny software platform for spectral and multiparametric flow cytometry (FACS) exploration, absolute cell count normalization using exogenous reference bead standards, and hierarchical ComplexHeatmap visualization."
+keywords:
+  - "flow-cytometry"
+  - "facs"
+  - "r-shiny"
+  - "complexheatmap"
+  - "absolute-counting"
+  - "bioinformatics"
