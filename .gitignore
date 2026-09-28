@@ -12,3 +12,9 @@ Thumbs.db
 Publication_*.pdf
 Activation_MFI_Dynamics.pdf
 Publication_Statistical_Report.txt
+
+# Raw uncurated data dumps (only demo_data is curated and tracked)
+*.xlsx
+*.xls
+*.csv
+!demo_data/*

@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **Interactive R/Shiny Platform for Multiparametric Flow Cytometry (FACS) Exploration, Absolute Cell Quantification, and Complex Phenotypic Profiling.**  
-> *Developed by Maxence Tricaud (Libreros Lab — Yale University / Université Laval).*
+> *Developed by Maxence Tricaud.*
 
 ---
 
@@ -22,7 +22,7 @@
 
 ## 2. ⚡ Quick Start: 1-Click Evaluation (Built-in Demo)
 
-The repository includes a curated, fully functional preclinical demonstration dataset (`demo_data/`) comparing murine bone marrow leukocyte activation under LPS challenge vs. steady-state conditions.
+The repository includes a curated, fully anonymized demonstration benchmark dataset (`demo_data/`) evaluating multiparametric leukocyte phenotypic activation across experimental cohorts (Healthy Control, Inflammatory Cohort, Oncology Cohort).
 
 ### Option A: Launch in RStudio
 1. Open `FlowCytometryAnalysisApp.Rproj` in RStudio.
@@ -100,7 +100,7 @@ Flow-Cyto-App/
 When uploading your own datasets, the application expects three complementary files:
 1. **FACS Export (`.xls`):** Hierarchical population report containing columns `Name`, `Statistic`, and `#Cells`.
 2. **Metadata Table (`.xlsx`):** Must contain `sample_no`, experimental condition (`condition`), and bead volumetric columns (`volume_total`, `volume_sample_Neu`, `beads_input`).
-3. **Marker Map (`.csv`):** Mapping table with columns `fluor` (e.g. `APC-A`, `BUV395-A`) and `marker` (e.g. `CD117`, `Sca1`).
+3. **Marker Map (`.csv`):** Mapping table with columns `fluor` (e.g. `APC-A`, `BUV395-A`) and `marker` (e.g. `CD16`, `CD66b`).
 
 ---
 
@@ -109,4 +109,4 @@ When uploading your own datasets, the application expects three complementary fi
 Distributed under the **MIT License**. See `LICENSE` for details.
 
 If utilizing **Flow-Cyto App** in academic studies, please cite:
-> Tricaud M. *Flow-Cyto App: Interactive Flow Cytometry Analysis and Absolute Count Normalization Suite*. Yale University / Université Laval (2025-2026). GitHub: `https://github.com/mt93git/Flow-Cyto-App`.
+> Tricaud M. *Flow-Cyto App: Interactive Flow Cytometry Analysis and Absolute Count Normalization Suite*. (2025-2026). GitHub: `https://github.com/mt93git/Flow-Cyto-App`.

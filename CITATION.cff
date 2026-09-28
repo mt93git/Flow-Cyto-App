@@ -3,10 +3,7 @@ message: "If you use this software in academic research, please cite it as below
 authors:
   - family-names: "Tricaud"
     given-names: "Maxence"
-    affiliation: "Yale University / Université Laval"
     email: "mtricaud.cetri@gmail.com"
-  - name: "Libreros Lab"
-    affiliation: "Yale University School of Medicine"
 title: "Flow-Cyto App"
 version: "4.7.0"
 date-released: 2025-12-18

@@ -15,9 +15,9 @@ source("../R/modules/mod_data_loader.R")
 
 test_that("Baseline Data Ingestion", {
     cat("\n--- Testing Baseline Data ---\n")
-    path_baseline <- "../28-Oct-2025_exp6_7_LPS_PDAC.xls"
-    
-    if(!file.exists(path_baseline)) skip("Baseline file not found")
+    path_baseline <- "../demo_data/demo_facs_data.xls"
+    if(!file.exists(path_baseline)) path_baseline <- "demo_data/demo_facs_data.xls"
+    if(!file.exists(path_baseline)) skip("Demo FACS file not found")
     
     # Run Parser
     res <- parse_legacy_facs(path_baseline)
