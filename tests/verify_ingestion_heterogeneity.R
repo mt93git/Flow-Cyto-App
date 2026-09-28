@@ -10,8 +10,8 @@ suppressPackageStartupMessages({
 })
 
 # Source the module file to access the internal function
-# Note: In a package we'd export it or use :::, but here we source
-source("../R/modules/mod_data_loader.R")
+path_mod <- if(file.exists("R/modules/mod_data_loader.R")) "R/modules/mod_data_loader.R" else "../R/modules/mod_data_loader.R"
+source(path_mod)
 
 test_that("Baseline Data Ingestion", {
     cat("\n--- Testing Baseline Data ---\n")
