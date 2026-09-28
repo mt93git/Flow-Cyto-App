@@ -56,10 +56,8 @@ The system employs **Regular Expressions (Regex)** to programmatically segregate
 *   **Arcsinh Transformation**: Raw fluorescence intensities (defined as x) undergo an inverse hyperbolic sine transformation: f(x) = asinh(x / 150). This linearizes data in the lower range while matching log behavior in the upper range.
 *   **Z-Score Standardization**: For visualization, marker expression is standardized across the sample cohort: Z = (x - mean) / standard_deviation. This centers the distribution at 0 with unit variance.
 
----
-**Author**: Maxence Tricaud for Libreros Lab
-**Date**: Dec 18 2025
-**Contact**: maxence.benjamin@gmail.com
+**Author**: Maxence Tricaud
+**Contact**: mtricaud.cetri@gmail.com
                     ")
                 )
       )
