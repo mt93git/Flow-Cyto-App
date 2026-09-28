@@ -40,36 +40,28 @@ test_that("Baseline Data Ingestion", {
     expect_true("CD45+" %in% pops)
 })
 
-test_that("Secondary Data Ingestion (Heterogeneous)", {
-    cat("\n--- Testing Secondary Data ---\n")
-    path_secondary <- "../New files for Heat map data-2/20251105 and 20251107 and 20251113 BoneMarrow FloJo Gating Analysis.xls"
+test_that("Dynamic Population Remapping & Polymorphism", {
+    cat("\n--- Testing Population Remapping on Standard Benchmark ---\n")
+    path_data <- "demo_data/demo_facs_data.xls"
+    if(!file.exists(path_data)) path_data <- "../demo_data/demo_facs_data.xls"
+    if(!file.exists(path_data)) skip("Demo FACS file not found")
     
-    if(!file.exists(path_secondary)) skip("Secondary file not found")
-    
-    # Polymorphic Map (Duplicate from Server logic)
-    poly_map <- list("immune" = "CD45+")
+    # Polymorphic Map: Rename 'Cells' to 'Total_Viable_Cells'
+    poly_map <- list("Cells" = "Total_Viable_Cells")
     
     # Run Parser with Mapping
-    res <- parse_legacy_facs(path_secondary, population_mapping = poly_map)
+    res <- parse_legacy_facs(path_data, population_mapping = poly_map)
     
     # Assertions
     expect_true(nrow(res$mfi) > 0)
     expect_true(nrow(res$counts) > 0)
     
-    # Check MFI Capture (was failing before due to negative values/format?)
-    # "Geometric Mean : Comp-APC-A = -136.833755493"
-    cat("Secondary MFI Rows:", nrow(res$mfi), "\n")
-    if(nrow(res$mfi) > 0) {
-        cat("Secondary MFI Example:", res$mfi$Parameter[1], "=", res$mfi$Value[1], "\n")
-    }
-    
-    # Check Population Mapping
-    # "immune" should be mapped to "CD45+"
     pops <- unique(res$counts$Population)
-    cat("Secondary Pops (Mapped):", paste(head(pops, 5), collapse=", "), "\n")
+    cat("Mapped Pops Preview:", paste(head(pops, 5), collapse=", "), "\n")
     
-    expect_true("CD45+" %in% pops)
-    expect_false("immune" %in% pops) # Should be replaced
+    # Check that 'Total_Viable_Cells' is present and 'Cells' is replaced
+    expect_true("Total_Viable_Cells" %in% pops)
+    expect_false("Cells" %in% pops)
 })
 
 cat("\nVerification Complete\n")
